@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Button, View, StyleSheet } from "react-native";
 import { CameraView, useCameraPermissions } from "expo-camera";
 
-export default function cameraTest() {
+export default function CameraTest() {
   const [permission, requestPermission] = useCameraPermissions();
   const [open, setOpen] = useState(true);
 

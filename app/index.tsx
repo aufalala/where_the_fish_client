@@ -1,29 +1,30 @@
 
 import { useRouter } from "expo-router";
-import { Text, View, Button } from "react-native";
+import {  Text, StyleSheet, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+// import MapScreen from "./map";
 
-export default function index() {
-  
+export default function Home() {
   const router = useRouter();
-  
+
   return (
-    <View
-      style={{
-        maxWidth: 500,
-        backgroundColor: "rgba(137, 33, 33, 1)",
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-
-      
-      <Button title="Go to About" onPress={() => router.push("/about")} />
-      <Button title="Go to Camera" onPress={() => router.push("/cameraTest")} />
-
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.testcontainer}>
+        <Text>
+          test hello askdjas
+        </Text>
+      </View>
+      <Text style={styles.text}>Where The Fish 🐟</Text>
+      {/* <MapScreen></MapScreen> */}
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1,
+  justifyContent: "center", alignItems: "center",
+  backgroundColor: "#9cdfd0ff" },
+  testcontainer: {  flex: 1, backgroundColor: "#c5e2daff"},
+  text: { fontSize: 24, fontWeight: "bold" },
+});
 
