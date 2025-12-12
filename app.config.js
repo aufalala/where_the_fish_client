@@ -69,6 +69,7 @@ export default ({ config }) => ({
     },
 
     extra: {
+      MAPBOX_PUBLIC_TOKEN: process.env.MAPBOX_PUBLIC_TOKEN,
       router: {},
       eas: {
         projectId: "76f8ec26-a581-4da0-9391-12355fa1ce20"
