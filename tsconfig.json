@@ -3,13 +3,14 @@
   "compilerOptions": {
     "strict": true,
     "jsx": "react-jsx",
-    "types": ["expo-router"],
-    "paths": { "@/*": ["./*"] }
+    "paths": { "@/*": ["./*"] },
+    "typeRoots": ["./src/types", "./node_modules/@types"]
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "expo-env.d.ts",
+    "src/types/**/*.d.ts"
   ]
 }
