@@ -70,6 +70,8 @@ export default ({ config }) => ({
 
     extra: {
       MAPBOX_PUBLIC_TOKEN: process.env.MAPBOX_PUBLIC_TOKEN,
+      EXPO_PUBLIC_CLOUDINARY_CLOUD_NAME: process.env.EXPO_PUBLIC_CLOUDINARY_CLOUD_NAME,
+      EXPO_PUBLIC_CLOUDINARY_UPLOAD_PRESET: process.env.EXPO_PUBLIC_CLOUDINARY_UPLOAD_PRESET,
       router: {},
       eas: {
         projectId: "76f8ec26-a581-4da0-9391-12355fa1ce20"
