@@ -20,7 +20,7 @@ export function usePhotoUpload() {
       if (status !== "granted") {
         throw new Error("Location permission denied");
       }
-      
+
       const location = await Location.getCurrentPositionAsync({});
       const { longitude, latitude } = location.coords;
 
@@ -38,6 +38,12 @@ export function usePhotoUpload() {
       );
 
       const data = await res.json();
+
+      if (!res.ok || !data.secure_url) {
+        console.error("Cloudinary error:", data);
+        throw new Error("Image upload failed");
+      }
+
       const imageUrl = data.secure_url;
 
       await createPost({ title, image: imageUrl, coords: { longitude, latitude } });
