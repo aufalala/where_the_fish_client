@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { useState } from "react";
 import { CameraCapture } from "../../src/components/upload/CameraCapture";
 import { PreviewForm } from "../../src/components/upload/PreviewForm";
@@ -15,7 +16,13 @@ export default function Upload() {
       photoUri={photoUri}
       title={title}
       setTitle={setTitle}
-      onSubmit={() => submitPost(photoUri, title).then(() => { setPhotoUri(null); setTitle(""); })}
+      onSubmit={() =>
+        submitPost(photoUri, title).then(() => {
+          setPhotoUri(null);
+          setTitle("");
+          router.replace("/")
+        })
+      }
       onRetake={() => setPhotoUri(null)}
       loading={loading}
     />
