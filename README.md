@@ -1,50 +1,47 @@
-# Welcome to your Expo app 👋
+# WHERE THE FISH
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Love fishing? Document and log your catches!  
+Explore what's around you and see what others are catching nearby.  
 
-## Get started
+## PREVIEW  
+(screenshots here)
 
-1. Install dependencies
+## GETTING STARTED
+>
+>NOTE:  
+>This app was primarily developed on android. but it should work fine on ios too.
+>
+Download and install the custom preview APK for android  
+(download link)  
+  
+## SITE FEATURES  
+User account creation/login. Progressive login/sign up menu.  
+"Infinite" scroll paginated home page. Scroll aware header and sidebar.  
+Meme rating - points awarded. Mutex via Redis to prevent first rater bonus race condition.  
+First Rater = 5pts. Subsequent rater = 2pts.  
+Global all time (points) leaderboard. Profile page through URL query.  
+  
+## HOSTING/SERVICE PROVIDERS  
+**EXPO:**  
+React Native Frontend  
+  
+**RAILWAY:**  
+Express Backend   
+  
+**MongoDB**  
+**CLOUDINARY** - fallback image hosting  
+  
+## ATTRIBUTIONS  
+**Meme API:**  
+meme-api.com/gimme  
+https://github.com/D3vd/Meme_Api  
+  
+**Font:**  
 
-   ```bash
-   npm install
-   ```
+## TECHNOLOGIES USED  
+React Native - Expo  
+MapBox GL  
+MongoDB - Mongoose  
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## FUTURE STEPS  
+Like, Comment
