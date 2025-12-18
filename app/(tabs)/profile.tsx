@@ -9,6 +9,7 @@ import {
   Text,
   View,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { deletePost, getMyPosts } from "../../src/services/post.service";
 import { Post } from "../../src/types/post";
 
@@ -60,28 +61,33 @@ export default function Profile() {
   }
 
   return (
-    <FlatList
-      data={posts}
-      keyExtractor={(item) => item._id}
-      contentContainerStyle={styles.list}
-      renderItem={({ item }) => (
-        <View style={styles.card}>
-          <Image source={{ uri: item.image }} style={styles.image} />
+    <SafeAreaView style={styles.safeView}>
+      <FlatList
+        data={posts}
+        keyExtractor={(item) => item._id}
+        contentContainerStyle={styles.list}
+        renderItem={({ item }) => (
+          <View style={styles.card}>
+            <Image source={{ uri: item.image }} style={styles.image} />
 
-          <View style={styles.row}>
-            <Text style={styles.title}>{item.title}</Text>
+            <View style={styles.row}>
+              <Text style={styles.title}>{item.title}</Text>
 
-            <Pressable onPress={() => onDelete(item._id)}>
-              <Text style={styles.delete}>Delete</Text>
-            </Pressable>
+              <Pressable onPress={() => onDelete(item._id)}>
+                <Text style={styles.delete}>Delete</Text>
+              </Pressable>
+            </View>
           </View>
-        </View>
-      )}
-    />
+        )}
+      />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeView: {
+    flex: 1,
+  },
   center: {
     flex: 1,
     justifyContent: "center",
