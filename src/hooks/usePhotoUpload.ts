@@ -46,7 +46,13 @@ export function usePhotoUpload() {
 
       const imageUrl = data.secure_url;
 
-      await createPost({ title, image: imageUrl, coords: { longitude, latitude } });
+      await createPost({
+        title,
+        image: imageUrl,
+        coords: { longitude, latitude },
+      });
+
+      return true;
     } finally {
       setLoading(false);
     }
