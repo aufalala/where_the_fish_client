@@ -23,20 +23,14 @@ Global all time (points) leaderboard. Profile page through URL query.
   
 ## HOSTING/SERVICE PROVIDERS  
 **EXPO:**  
-React Native Frontend  
+App APK
   
 **RAILWAY:**  
-Express Backend   
+Express Server  
   
 **MongoDB**  
-**CLOUDINARY** - fallback image hosting  
   
-## ATTRIBUTIONS  
-**Meme API:**  
-meme-api.com/gimme  
-https://github.com/D3vd/Meme_Api  
-  
-**Font:**  
+**Cloudinary**  
 
 ## TECHNOLOGIES USED  
 React Native - Expo  
@@ -44,4 +38,8 @@ MapBox GL
 MongoDB - Mongoose  
 
 ## FUTURE STEPS  
-Like, Comment
+Anti GPS Spoofing  
+Map tileset and chunking  
+Symbol and shape clustering  
+Friendlist  
+Like, Comment  
