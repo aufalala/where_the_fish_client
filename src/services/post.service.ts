@@ -14,3 +14,16 @@ export async function createPost(post: {
   const res = await api.post<Post>("/posts", post, { authRequired: true });
   return res.data;
 }
+
+export async function getMyPosts(): Promise<Post[]> {
+  const res = await api.get<Post[]>("/posts/user/me", {
+    authRequired: true,
+  });
+  return res.data;
+}
+
+export async function deletePost(postId: string): Promise<void> {
+  await api.delete(`/posts/${postId}`, {
+    authRequired: true,
+  });
+}
