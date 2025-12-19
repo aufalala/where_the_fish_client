@@ -6,7 +6,7 @@ import * as Location from 'expo-location';
 import { useFocusEffect } from 'expo-router';
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Image, Platform, Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Platform, Pressable, StyleSheet, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import ThemedView from "../../src/components/themed/ThemedView";
@@ -135,32 +135,34 @@ export default function Home() {
         )}
 
         <Pressable
-          style={styles.recenterButton}
+          style={[styles.recenterButton, { opacity: isFollowingUser ? 0.3 : 0.7 }]}
           onPress={() => {
             setIsFollowingUser(true);
           }}
         >
-          
-            <Ionicons name="locate" size={30} color={"white"} />
+          <Ionicons name="locate" size={30} color={"white"} />
         </Pressable>
 
         {selectedPost && (
-          <View style={styles.preview}>
-            
-            <Image
-              source={{ uri: selectedPost.image }}
-              style={styles.previewImage}
-            />
+          <Pressable
+            style={styles.overlay}
+            onPress={() => setSelectedPost(null)}
+          >
+            <Pressable
+              style={styles.preview}
+              onPress={() => {}}
+            >
+              <Image
+                source={{ uri: selectedPost.image }}
+                style={styles.previewImage}
+              />
 
-            <Text style={styles.previewTitle}>
-              {selectedPost.title}
-            </Text>
-            
-            <Pressable onPress={() => setSelectedPost(null)}>
-              <Text style={styles.previewClose}>Close</Text>
+              <Text style={styles.previewTitle}>
+                {selectedPost.title}
+              </Text>
+              <Text style={styles.previewClose}>{selectedPost.user.username}</Text>
             </Pressable>
-
-          </View>
+          </Pressable>
         )}
 
       </ThemedView>
@@ -173,12 +175,14 @@ const styles = StyleSheet.create({
   container: { flex: 1 },
   map: { flex: 1 },
 
+  overlay: {
+      ...StyleSheet.absoluteFillObject,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   preview: {
-    position: "absolute",
-    bottom: 20,
-    left: 16,
-    right: 16,
-    backgroundColor: "#111",
+    width: "90%",
+    backgroundColor: "#ffffffff",
     borderRadius: 16,
     padding: 12,
   },
@@ -190,8 +194,8 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
 
-  previewTitle: { color: "#fff", fontSize: 16, fontWeight: "600" },
-  previewClose: { color: "#FF3B30", marginTop: 8, textAlign: "right" },
+  previewTitle: { color: "#000000ff", fontSize: 16, fontWeight: "600", textAlign: "center" },
+  previewClose: { color: "#1973bcff", marginTop: 10, marginBottom: 10, textAlign: "center"},
 
   recenterButton: {
     position: 'absolute',
@@ -200,8 +204,7 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 24,
-    backgroundColor: '#111',
-    opacity: .5,
+    backgroundColor: '#696969ff',
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
