@@ -1,6 +1,7 @@
 import { CameraView, useCameraPermissions } from "expo-camera";
 import { useEffect, useRef } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 interface Props {
   onCapture: (uri: string) => void;
@@ -22,10 +23,11 @@ export function CameraCapture({ onCapture }: Props) {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container} edges={["top"]}>
+    
       <CameraView ref={cameraRef} style={styles.camera} />
       <Pressable style={styles.capture} onPress={takePhoto} />
-    </View>
+    </SafeAreaView>
   );
 }
 

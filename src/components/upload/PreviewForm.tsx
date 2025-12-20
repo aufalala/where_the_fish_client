@@ -1,4 +1,5 @@
-import { ActivityIndicator, Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { ActivityIndicator, Image, Pressable, StyleSheet, Text, TextInput } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 interface Props {
   photoUri: string;
@@ -11,7 +12,7 @@ interface Props {
 
 export function PreviewForm({ photoUri, title, setTitle, onSubmit, onRetake, loading }: Props) {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container} edges={["top"]}>
       <Image source={{ uri: photoUri }} style={styles.preview} />
       <TextInput
         placeholder="Give this catch a title"
@@ -24,11 +25,11 @@ export function PreviewForm({ photoUri, title, setTitle, onSubmit, onRetake, loa
         {loading ? <ActivityIndicator color="#fff" /> : <Text style={styles.submitText}>Post</Text>}
       </Pressable>
       <Pressable onPress={onRetake}><Text style={styles.retake}>Retake</Text></Pressable>
-    </View>
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
+ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#000" },
   preview: { flex: 1 },
   input: { backgroundColor: "#111", color: "#fff", padding: 12, margin: 12, borderRadius: 8 },
